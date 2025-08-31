@@ -22,3 +22,6 @@ Then look for the file :
 - > mysql -u <user_name> -p accounts < accountsdb.sql
 
 
+kops create cluster --name=kubepro.menradevops.xyz --state=s3://kubpro-mwr --zones=us-east-1a,us-east-1b --node-count=2 --node-size=t3.small --control-plane-size=c7i-flex.large --dns-zone=kubepro.menradevops.xyz --node-volume-size=12 --control-plane-volume-size=12 --ssh-public-key ~/.ssh/id_rsa.pub
+
+kops update cluster --name=kubepro.menradevops.xyz --state=s3://kubpro-mwr --yes --admin
